@@ -36,10 +36,6 @@ buildHeap xs i =
     else buildHeap (heapify xs i) (i-1)
 	
 
-myInit :: [a] -> [a]
-myInit [] = []
-myInit xs = init xs
-
 heapSortLoop :: (Ord a) => [a] -> Int ->[a]
 heapSortLoop [] _ = []
 heapSortLoop xs result = 
