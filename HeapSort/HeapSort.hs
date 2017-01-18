@@ -13,7 +13,7 @@ rightChild a = 2*a + 2
 			   
 
 
-heapify :: (Num a, Ord a) => [a] -> Int -> [a]
+heapify :: (Ord a) => [a] -> Int -> [a]
 heapify [] _ = []
 heapify xs a =
    if a < 0 
@@ -26,7 +26,7 @@ heapify xs a =
 		 
 
 
-buildHeap :: (Num a, Ord a) => [a] -> Int -> [a] 
+buildHeap :: (Ord a) => [a] -> Int -> [a] 
 buildHeap [] _ = []
 buildHeap xs i =
     if(i < 0) 
@@ -40,14 +40,14 @@ myInit :: [a] -> [a]
 myInit [] = []
 myInit xs = init xs
 
-heapSortLoop :: (Num a, Ord a) => [a] -> Int ->[a]
+heapSortLoop :: (Ord a) => [a] -> Int ->[a]
 heapSortLoop [] _ = []
 heapSortLoop xs result = 
    if(result == 0)
       then xs
    else heapSortLoop ((heapify (xs!!result : tail (take result xs)) 0)++ xs!!0:(drop (result+1) xs)) (result - 1)
    
-heapSort :: (Num a, Ord a) => [a] -> [a]
+heapSort :: (Ord a) => [a] -> [a]
 heapSort [] = []
 heapSort xs = heapSortLoop  (buildHeap xs ((length xs) - 1)) ((length xs) - 1)
    
