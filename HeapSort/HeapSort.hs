@@ -9,6 +9,7 @@ Portability : POSIX
 -}
 
 module HeapSort(
+-- *functions
 parent,
 leftChild,
 rightChild,
